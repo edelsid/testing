@@ -1,0 +1,111 @@
+body {
+   padding: 25px 25px 0px 25px;
+}
+
+.widget {
+   width: 750px;   
+}
+
+.cards {
+   width: 300px;
+   display: flex;
+   justify-content: space-between;
+   list-style: none;
+   padding: 0px;
+   margin-top: 0px;
+}
+
+.card {
+   width: 40px;
+   height: 25px;
+   display: block;
+   background-color: gray;
+   border: 1px solid black;
+}
+
+.mastercard {
+   background-image: url('../img/mastercard.png');
+}
+
+.visa {
+   background-image: url('../img/visa.png');
+}
+
+.mir {
+   background-image: url('../img/mir.png');
+}
+
+.unionpay {
+   background-image: url('../img/union-pay.png');
+}
+
+.maestro {
+   background-image: url('../img/maestro.png');
+}
+
+.express {
+   background-image: url('../img/express.png');
+}
+
+.form-control {
+   box-sizing: border-box;
+   height: 34px;
+   padding: 6px 12px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   vertical-align: middle;
+}
+
+.btn {
+   box-sizing: border-box;
+   display: inline-block;
+   padding: 6px 12px;
+   font-weight: 400;
+   text-align: center;
+   vertical-align: middle;
+   cursor: pointer;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   color: #fff;
+   background-color: #398439;
+   margin-left: 10px;
+   font-family: sans-serif;
+   font-size: 14px;
+}
+
+.greyed {
+   filter: grayscale(1);
+   opacity: 0.33;
+}
+
+.validation {
+   height: 25px;
+   margin-top: 25px;
+   width: 300px;
+   display: flex;
+   align-items: center;
+}
+
+.marker {
+   display: block;
+   height: 25px;
+   width: 25px;
+}
+
+.undefined {
+   background-image: url('../img/help.png');
+}
+
+.correct {
+   background-image: url('../img/check.png');
+}
+
+.incorrect {
+   background-image: url('../img/remove.png');
+}
+
+.msg {
+   margin-left: 10px;
+   font-family: sans-serif;
+   font-size: 14px;
+}
