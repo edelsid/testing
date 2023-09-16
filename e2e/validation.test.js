@@ -6,7 +6,7 @@ describe('Right and wrong code verification', () => {
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
-      headless: false,
+      headless: 'new',
       slowMo: 100,
       devtools: true,
     });
