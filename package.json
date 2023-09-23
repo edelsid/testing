@@ -1,8 +1,5 @@
 {
   "name": "testing-1",
-  "jest": {
-    "testPathIgnorePatterns": ["e2e"]
-  },
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",

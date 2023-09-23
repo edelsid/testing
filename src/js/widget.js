@@ -1,5 +1,5 @@
-import CardNumber from './numbers';
-import NumType from './types';
+import CardNumber from './cardNumber';
+import NumType from './numType';
 
 export default class Widget {
   constructor(element) {

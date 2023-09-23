@@ -1,12 +1,27 @@
 import puppeteer from 'puppeteer';
+import { fork } from 'child_process';
+
+jest.setTimeout(30000);
 
 describe('Right and wrong code verification', () => {
-  let browser;
-  let page;
+  let browser = null;
+  let page = null;
+  let server = null;
+  const baseUrl = 'http://localhost:8080';
 
   beforeEach(async () => {
+    server = fork(`${__dirname}/e2e.server.js`);
+    await new Promise((resolve, reject) => {
+      server.on('error', reject);
+      server.on('message', (message) => {
+        if (message === 'ok') {
+          resolve();
+        }
+      });
+    });
+
     browser = await puppeteer.launch({
-      headless: 'new',
+      headless: false,
       slowMo: 100,
       devtools: true,
     });
@@ -15,7 +30,7 @@ describe('Right and wrong code verification', () => {
   });
 
   test('right code validation', async () => {
-    await page.goto('http://localhost:8080');
+    await page.goto(baseUrl);
     await page.waitForSelector('.input_form');
 
     const form = await page.$('.input_form');
@@ -26,10 +41,10 @@ describe('Right and wrong code verification', () => {
     await submit.click();
 
     await page.waitForSelector('.correct');
-  }, 15000);
+  });
 
   test('wrong code validation', async () => {
-    await page.goto('http://localhost:8080');
+    await page.goto(baseUrl);
     await page.waitForSelector('.input_form');
 
     const form = await page.$('.input_form');
@@ -40,9 +55,10 @@ describe('Right and wrong code verification', () => {
     await submit.click();
 
     await page.waitForSelector('.incorrect');
-  }, 15000);
+  });
 
   afterEach(async () => {
     await browser.close();
+    server.kill();
   });
 });

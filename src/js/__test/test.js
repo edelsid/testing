@@ -1,5 +1,5 @@
-import CardNumber from '../numbers';
-import NumType from '../types';
+import CardNumber from '../cardNumber';
+import NumType from '../numType';
 
 const dataList = [
   ['345441380164525', true],
