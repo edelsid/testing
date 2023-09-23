@@ -21,7 +21,7 @@ describe('Right and wrong code verification', () => {
     });
 
     browser = await puppeteer.launch({
-      headless: false,
+      headless: 'new',
       slowMo: 100,
       devtools: true,
     });
